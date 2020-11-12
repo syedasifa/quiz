@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Dashboard
+{% endblock %}
+
+{% block content %}
+
+	{% for question in questions %}
+		<strong class="question">{{ question }}</strong>
+		{% for option in options %}
+			<input type="radio" name="option">{{ option }}
+		{% endfor %}
+	{% endfor %}
+
+	<p>Welcome to your quiz page {{ user }}.You can logout here. 
+		<a href="{% url 'account-logout' %}">Logout</a>
+	</p>
+{% endblock %}
